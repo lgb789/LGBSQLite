@@ -8,6 +8,6 @@
 
 @import UIKit;
 
-@interface LGBViewController : UIViewController
+@interface LGBViewController : UITableViewController
 
 @end

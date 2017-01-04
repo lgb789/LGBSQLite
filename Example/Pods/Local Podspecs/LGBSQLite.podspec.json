@@ -1,0 +1,23 @@
+{
+  "name": "LGBSQLite",
+  "version": "0.1.0",
+  "summary": "A short description of LGBSQLite.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/<GITHUB_USERNAME>/LGBSQLite",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "lgb789": "lgb789@126.com"
+  },
+  "source": {
+    "git": "https://github.com/<GITHUB_USERNAME>/LGBSQLite.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "LGBSQLite/Classes/**/*",
+  "libraries": "sqlite3"
+}

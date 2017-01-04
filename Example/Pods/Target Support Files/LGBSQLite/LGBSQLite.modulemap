@@ -1,0 +1,6 @@
+framework module LGBSQLite {
+  umbrella header "LGBSQLite-umbrella.h"
+
+  export *
+  module * { export * }
+}

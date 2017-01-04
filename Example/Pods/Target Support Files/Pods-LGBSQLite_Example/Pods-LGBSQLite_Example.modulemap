@@ -1,0 +1,6 @@
+framework module Pods_LGBSQLite_Example {
+  umbrella header "Pods-LGBSQLite_Example-umbrella.h"
+
+  export *
+  module * { export * }
+}

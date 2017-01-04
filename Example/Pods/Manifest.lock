@@ -1,5 +1,5 @@
 PODS:
-  - LGBSQLite (0.1.1)
+  - LGBSQLite (0.1.3)
 
 DEPENDENCIES:
   - LGBSQLite (from `../`)
@@ -9,7 +9,7 @@ EXTERNAL SOURCES:
     :path: ../
 
 SPEC CHECKSUMS:
-  LGBSQLite: 1f1c5e1d3ea50ea4525f6e894e03f3444cf90bdd
+  LGBSQLite: ebfca4456e40e2e03ada4ba3eb2675453eaa10e7
 
 PODFILE CHECKSUM: d6b7adb5fc0d9bb0e0401c01d30fdf756f3fd632
 

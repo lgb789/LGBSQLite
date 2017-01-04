@@ -10,7 +10,7 @@
 
 @interface LGBSQLiteStorage : NSObject
 
--(instancetype)initWithClass:(Class)name;
+-(instancetype)initWithClass:(Class)name dbName:(NSString *)dbName;
 
 -(BOOL)insertObj:(id)obj;
 

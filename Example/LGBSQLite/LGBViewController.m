@@ -122,7 +122,7 @@
 -(LGBSQLiteStorage *)storage
 {
     if (_storage == nil) {
-        _storage = [[LGBSQLiteStorage alloc] initWithClass:[Test class]];
+        _storage = [[LGBSQLiteStorage alloc] initWithClass:[Test class] dbName:@"test.db"];
     }
     return _storage;
 }

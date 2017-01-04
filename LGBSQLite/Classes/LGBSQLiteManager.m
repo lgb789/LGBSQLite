@@ -10,7 +10,7 @@
 #import <sqlite3.h>
 #import <CommonCrypto/CommonDigest.h>
 
-#define kDatabaseName    @"LGBSQLite.db"
+//#define kDatabaseName    @"LGBSQLite.db"
 
 @interface LGBSQLiteManager ()
 @property (nonatomic, assign) sqlite3 *database;
@@ -28,11 +28,11 @@
     return _manager;
 }
 
--(instancetype)init
+-(instancetype)initWithDatabaseName:(NSString *)name
 {
     self = [super init];
     if (self) {
-        [self openDatabase];
+        [self openDatabase:name];
     }
     return self;
 }
@@ -51,17 +51,17 @@
     return output;
 }
 
--(NSString *)getFileName
+-(NSString *)getFileName:(NSString *)name
 {
     NSString *path = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) firstObject];
-    NSString *filename = [self md5WithString:kDatabaseName];
+    NSString *filename = [self md5WithString:name];
     filename = [path stringByAppendingPathComponent:filename];
     return filename;
 }
 
--(BOOL)openDatabase
+-(BOOL)openDatabase:(NSString *)name
 {
-    NSString *filename = [self getFileName];
+    NSString *filename = [self getFileName:name];
     if(sqlite3_open([filename UTF8String], &_database) != SQLITE_OK){
         return NO;
     }

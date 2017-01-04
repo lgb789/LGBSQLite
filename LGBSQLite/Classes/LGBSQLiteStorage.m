@@ -13,6 +13,7 @@
 @interface LGBSQLiteStorage ()
 @property (nonatomic, strong) NSString *tableName;
 @property (nonatomic, strong) NSMutableArray *properties;
+@property (nonatomic, strong) LGBSQLiteManager *manager;
 @end
 
 @implementation LGBSQLiteStorage
@@ -35,14 +36,15 @@
     
     free(properties);
     NSString *sql = [NSString stringWithFormat:@"create table if not exists %@ (%@)", self.tableName, columns];
-    return [[LGBSQLiteManager shared] executeNonSqlite:sql];
+    return [self.manager executeNonSqlite:sql];
 }
 
--(instancetype)initWithClass:(Class)name
+-(instancetype)initWithClass:(Class)name dbName:(NSString *)dbName
 {
     self = [super init];
     if (self) {
         self.tableName = [NSString stringWithUTF8String:class_getName(name)];
+        self.manager = [[LGBSQLiteManager alloc] initWithDatabaseName:dbName];
         if([self createTableWithClass:name] == NO){
             NSLog(@"create table error.");
         }
@@ -67,7 +69,7 @@
         values = [values stringByAppendingString:[NSString stringWithFormat:@"'%@'", v]];
     }
     NSString *sql = [NSString stringWithFormat:@"insert into %@ (%@) values(%@)", self.tableName, columns, values];
-    return [[LGBSQLiteManager shared] executeNonSqlite:sql];
+    return [self.manager executeNonSqlite:sql];
 }
 
 -(BOOL)deleteObj:(id)obj
@@ -83,13 +85,13 @@
     }
     
     NSString *sql = [NSString stringWithFormat:@"delete from %@ where %@", self.tableName, columns];
-    return [[LGBSQLiteManager shared] executeNonSqlite:sql];
+    return [self.manager executeNonSqlite:sql];
 }
 
 -(BOOL)deleteObjByKey:(NSString *)key value:(id)value
 {
     NSString *sql = [NSString stringWithFormat:@"delete from %@ where %@='%@'", self.tableName, key, value];
-    return [[LGBSQLiteManager shared] executeNonSqlite:sql];
+    return [self.manager executeNonSqlite:sql];
 }
 
 -(BOOL)updateObj:(id)obj key:(NSString *)key
@@ -104,7 +106,7 @@
         columns = [columns stringByAppendingString:c];
     }
     NSString *sql = [NSString stringWithFormat:@"update %@ set %@ where %@='%@'", self.tableName, columns, key, [obj valueForKey:key]];
-    return [[LGBSQLiteManager shared] executeNonSqlite:sql];
+    return [self.manager executeNonSqlite:sql];
 }
 
 -(NSArray *)getObjs
@@ -121,7 +123,7 @@
 
 -(NSArray *)getObjsWithSql:(NSString *)sql
 {
-    NSArray *arr = [[LGBSQLiteManager shared] executeSqlite:sql];
+    NSArray *arr = [self.manager executeSqlite:sql];
     NSMutableArray *objs = [NSMutableArray array];
     for (NSDictionary *dic in arr) {
         Class c = NSClassFromString(self.tableName);

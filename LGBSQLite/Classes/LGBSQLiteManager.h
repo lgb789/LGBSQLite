@@ -10,7 +10,7 @@
 
 @interface LGBSQLiteManager : NSObject
 
-+(LGBSQLiteManager *)shared;
+-(instancetype)initWithDatabaseName:(NSString *)name;
 
 -(NSArray *)executeSqlite:(NSString *)sql;
 

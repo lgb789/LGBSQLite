@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'LGBSQLite'
-  s.version          = '0.1.1'
+  s.version          = '0.1.2'
   s.summary          = 'A sqlite wrapper.'
 
 # This description is used to generate tags and improve search results.
@@ -39,5 +39,5 @@ TODO: A sqlite wrapper storage.
   # s.public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'
   # s.dependency 'AFNetworking', '~> 2.3'
-    s.library = 'sqlite3'
+    s.libraries = 'sqlite3'
 end

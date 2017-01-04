@@ -1,9 +1,9 @@
 {
   "name": "LGBSQLite",
-  "version": "0.1.0",
-  "summary": "A short description of LGBSQLite.",
-  "description": "TODO: Add long description of the pod here.",
-  "homepage": "https://github.com/<GITHUB_USERNAME>/LGBSQLite",
+  "version": "0.1.1",
+  "summary": "A sqlite wrapper.",
+  "description": "TODO: A sqlite wrapper storage.",
+  "homepage": "https://github.com/lgb789/LGBSQLite",
   "license": {
     "type": "MIT",
     "file": "LICENSE"
@@ -12,11 +12,11 @@
     "lgb789": "lgb789@126.com"
   },
   "source": {
-    "git": "https://github.com/<GITHUB_USERNAME>/LGBSQLite.git",
-    "tag": "0.1.0"
+    "git": "https://github.com/lgb789/LGBSQLite.git",
+    "tag": "0.1.1"
   },
   "platforms": {
-    "ios": "8.0"
+    "ios": "7.0"
   },
   "source_files": "LGBSQLite/Classes/**/*",
   "libraries": "sqlite3"

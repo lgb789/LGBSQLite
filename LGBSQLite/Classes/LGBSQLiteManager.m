@@ -41,7 +41,7 @@
 {
     const char *ptr = [str UTF8String];
     unsigned char md5Buffer[CC_MD5_DIGEST_LENGTH];
-    CC_MD5(ptr, strlen(ptr), md5Buffer);
+    CC_MD5(ptr, (unsigned int)strlen(ptr), md5Buffer);
     
     NSMutableString *output = [NSMutableString stringWithCapacity:CC_MD5_DIGEST_LENGTH * 2];
     for (int i = 0; i < CC_MD5_DIGEST_LENGTH; i++) {
@@ -79,7 +79,7 @@
             for (int i = 0; i < columntCount; i++) {
                 const char *name = sqlite3_column_name(stmt, i);
                 const unsigned char *value = sqlite3_column_text(stmt, i);
-                [dic setObject:[NSString stringWithUTF8String:value] forKey:[NSString stringWithUTF8String:name]];
+                [dic setObject:[NSString stringWithUTF8String:(const char *)value] forKey:[NSString stringWithUTF8String:name]];
             }
             [arr addObject:dic];
         }

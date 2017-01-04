@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'LGBSQLite_Example' do
+  pod 'LGBSQLite', :path => '../'
+
+  target 'LGBSQLite_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end

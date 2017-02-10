@@ -1,6 +1,6 @@
 {
   "name": "LGBSQLite",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "summary": "A sqlite wrapper.",
   "description": "TODO: A sqlite wrapper storage.",
   "homepage": "https://github.com/lgb789/LGBSQLite",
@@ -13,7 +13,7 @@
   },
   "source": {
     "git": "https://github.com/lgb789/LGBSQLite.git",
-    "tag": "0.1.3"
+    "tag": "0.1.4"
   },
   "platforms": {
     "ios": "7.0"

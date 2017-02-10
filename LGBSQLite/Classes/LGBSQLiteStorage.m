@@ -140,6 +140,12 @@
     return objs;
 }
 
+-(NSArray *)getObjsFrom:(NSInteger)fromIndex count:(NSInteger)count
+{
+    NSString *sql = [NSString stringWithFormat:@"select * from %@ limit %d offset %d", self.tableName, count, fromIndex];
+    return [self getObjsWithSql:sql];
+}
+
 -(NSMutableArray *)properties
 {
     if (_properties == nil) {

@@ -10,6 +10,8 @@
 #import <objc/runtime.h>
 #import "LGBSQLiteManager.h"
 
+static const NSString *__defaultDataBase = @"__defaultDataBase";
+
 @interface LGBSQLiteStorage ()
 @property (nonatomic, strong) NSString *tableName;
 @property (nonatomic, strong) NSMutableArray *properties;
@@ -44,12 +46,17 @@
     self = [super init];
     if (self) {
         self.tableName = [NSString stringWithUTF8String:class_getName(name)];
-        self.manager = [[LGBSQLiteManager alloc] initWithDatabaseName:dbName];
+        self.manager = [[LGBSQLiteManager alloc] initWithDatabaseName:(dbName ? dbName : __defaultDataBase)];
         if([self createTableWithClass:name] == NO){
             NSLog(@"create table error.");
         }
     }
     return self;
+}
+
+-(instancetype)initWithClass:(Class)name
+{
+    return [self initWithClass:name dbName:nil];
 }
 
 -(BOOL)insertObj:(id)obj
@@ -69,6 +76,7 @@
         values = [values stringByAppendingString:[NSString stringWithFormat:@"'%@'", v]];
     }
     NSString *sql = [NSString stringWithFormat:@"insert into %@ (%@) values(%@)", self.tableName, columns, values];
+    NSLog(@"add sql:%@", sql);
     return [self.manager executeNonSqlite:sql];
 }
 
@@ -85,6 +93,7 @@
     }
     
     NSString *sql = [NSString stringWithFormat:@"delete from %@ where %@", self.tableName, columns];
+    NSLog(@"del sql:%@", sql);
     return [self.manager executeNonSqlite:sql];
 }
 

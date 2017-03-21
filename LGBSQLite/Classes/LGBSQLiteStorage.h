@@ -21,6 +21,14 @@
 -(instancetype)initWithClass:(Class)name dbName:(NSString *)dbName;
 
 /**
+ 初始化
+
+ @param name 类名
+ @return LGBSQLiteStorage
+ */
+-(instancetype)initWithClass:(Class)name;
+
+/**
  插入一个对象到数据库
 
  @param obj 要插入的对象

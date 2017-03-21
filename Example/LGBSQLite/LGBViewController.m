@@ -85,6 +85,8 @@
             t.name = @"lgb0";
             t.age = 34;
             t.weight = 34.3;
+            t.fff = 34.33;
+            t.ddd = 5.555;
             [self.storage deleteObj:t];
         }
             
@@ -132,7 +134,8 @@
 -(LGBSQLiteStorage *)storage
 {
     if (_storage == nil) {
-        _storage = [[LGBSQLiteStorage alloc] initWithClass:[Test class] dbName:@"test.db"];
+//        _storage = [[LGBSQLiteStorage alloc] initWithClass:[Test class] dbName:@"test.db"];
+        _storage = [[LGBSQLiteStorage alloc] initWithClass:[Test class]];
     }
     return _storage;
 }

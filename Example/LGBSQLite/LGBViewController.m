@@ -9,6 +9,7 @@
 #import "LGBViewController.h"
 #import "LGBSQLite.h"
 #import "Test.h"
+#import "Test1.h"
 
 @interface LGBViewController ()
 @property (nonatomic, strong) NSArray *items;
@@ -69,7 +70,7 @@
     NSLog(@"indexpath:%@", indexPath);
     switch (indexPath.row) {
         case 0:{
-            Test *t = [Test new];
+            Test1 *t = [Test1 new];
             t.name = [NSString stringWithFormat:@"lgb%ld", index++];
             t.age = 34;
             t.weight = 34.3;
@@ -81,7 +82,7 @@
             
             break;
         case 1:{
-            Test *t = [Test new];
+            Test1 *t = [Test1 new];
             t.name = @"lgb0";
             t.age = 34;
             t.weight = 34.3;
@@ -96,7 +97,7 @@
         }
             break;
         case 3:{
-            Test *t = [Test new];
+            Test1 *t = [Test1 new];
             t.name = @"lgb2";
             t.age = 999;
             t.weight = 34.3;
@@ -105,21 +106,21 @@
             break;
         case 4:{
             NSArray *arr = [self.storage getObjsByKey:@"name" value:@"lgb0"];
-            for (Test *t in arr) {
+            for (Test1 *t in arr) {
                 NSLog(@"t:%@,%ld,%@,%f,%f", t.name, t.age, @(t.ddd), t.fff,t.weight);
             }
         }
             break;
         case 5:{
             NSArray *arr = [self.storage getObjs];
-            for (Test *t in arr) {
+            for (Test1 *t in arr) {
                 NSLog(@"t:%@,%ld,%f,%f,%f,%f", t.name, t.age, t.fff,t.fff,t.ddd,t.weight);
             }
         }
             break;
         case 6:{
             NSArray *arr = [self.storage getObjsFrom:2 count:3];
-            for (Test *t in arr) {
+            for (Test1 *t in arr) {
                 NSLog(@"t:%@,%ld,%f,%f,%f,%f", t.name, t.age, t.fff,t.fff,t.ddd,t.weight);
             }
         }
@@ -135,7 +136,7 @@
 {
     if (_storage == nil) {
 //        _storage = [[LGBSQLiteStorage alloc] initWithClass:[Test class] dbName:@"test.db"];
-        _storage = [[LGBSQLiteStorage alloc] initWithClass:[Test class]];
+        _storage = [[LGBSQLiteStorage alloc] initWithClass:[Test1 class]];
     }
     return _storage;
 }

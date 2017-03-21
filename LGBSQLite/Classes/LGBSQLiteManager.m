@@ -12,6 +12,12 @@
 
 //#define kDatabaseName    @"LGBSQLite.db"
 
+#ifdef DEBUG
+#define MLog(fmt, ...)     NSLog(@"[%@:%d] "fmt, [[NSString stringWithFormat:@"%s", __FILE__] lastPathComponent], __LINE__, ##__VA_ARGS__)
+#else
+#define MLog
+#endif
+
 @interface LGBSQLiteManager ()
 @property (nonatomic, assign) sqlite3 *database;
 @end
@@ -62,6 +68,7 @@
 -(BOOL)openDatabase:(NSString *)name
 {
     NSString *filename = [self getFileName:name];
+    MLog(@"datbase path:%@", filename);
     if(sqlite3_open([filename UTF8String], &_database) != SQLITE_OK){
         return NO;
     }

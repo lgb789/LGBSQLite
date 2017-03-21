@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2C1A26951E812BC400697D90 /* Test1.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C1A26941E812BC400697D90 /* Test1.m */; };
 		2C3B7D171E1CA77B00086C4C /* Test.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C3B7D161E1CA77B00086C4C /* Test.m */; };
 		6003F58E195388D20070C39A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
 		6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58F195388D20070C39A /* CoreGraphics.framework */; };
@@ -38,6 +39,8 @@
 /* Begin PBXFileReference section */
 		0BDDA1CD0E1526A493B09C26 /* Pods-LGBSQLite_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LGBSQLite_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LGBSQLite_Example/Pods-LGBSQLite_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		13AA4906FBDA0E8B37A9BE07 /* LGBSQLite.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LGBSQLite.podspec; path = ../LGBSQLite.podspec; sourceTree = "<group>"; };
+		2C1A26931E812BC400697D90 /* Test1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Test1.h; sourceTree = "<group>"; };
+		2C1A26941E812BC400697D90 /* Test1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Test1.m; sourceTree = "<group>"; };
 		2C3B7D151E1CA77B00086C4C /* Test.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Test.h; sourceTree = "<group>"; };
 		2C3B7D161E1CA77B00086C4C /* Test.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Test.m; sourceTree = "<group>"; };
 		32A6427F4288C8588026595D /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
@@ -138,6 +141,8 @@
 				6003F5A6195388D20070C39A /* LGBViewController.m */,
 				2C3B7D151E1CA77B00086C4C /* Test.h */,
 				2C3B7D161E1CA77B00086C4C /* Test.m */,
+				2C1A26931E812BC400697D90 /* Test1.h */,
+				2C1A26941E812BC400697D90 /* Test1.m */,
 				6003F594195388D20070C39A /* Supporting Files */,
 			);
 			name = "Example for LGBSQLite";
@@ -396,6 +401,7 @@
 			files = (
 				6003F59E195388D20070C39A /* LGBAppDelegate.m in Sources */,
 				2C3B7D171E1CA77B00086C4C /* Test.m in Sources */,
+				2C1A26951E812BC400697D90 /* Test1.m in Sources */,
 				6003F5A7195388D20070C39A /* LGBViewController.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
 			);
